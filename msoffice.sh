@@ -42,6 +42,11 @@ cd "$POL_USER_ROOT/tmp"
 # Making bulletslook right
 POL_Wine_InstallFonts
 
+check_one "unzip" "unzip"
+check_one "wget" "wget"
+check_one "foobar" "foobar"
+POL_SetupWindow_missing
+
 # Making e.g. smileys look right
 function copyExtraFonts() {
     FONTSURL=https://github.com/IamDH4/ttf-wps-fonts/archive/master.zip
@@ -96,6 +101,13 @@ POL_Wine_OverrideDLL native,builtin riched20
 POL_Shortcut "WINWORD.EXE" "Microsoft Word 2007" "" "" "Office;WordProcessor;"
 POL_Shortcut "EXCEL.EXE" "Microsoft Excel 2007" "" "" "Office;Spreadsheet;"
 POL_Shortcut "POWERPNT.EXE" "Microsoft Powerpoint 2007" "" "" "Office;Presentation;"
+
+POL_Extension_Write doc "Microsoft Word 2007"
+POL_Extension_Write docx "Microsoft Word 2007"
+POL_Extension_Write xls "Microsoft Excel 2007"
+POL_Extension_Write xlsx "Microsoft Excel 2007"
+POL_Extension_Write ppt "Microsoft Powerpoint 2007"
+POL_Extension_Write pptx "Microsoft Powerpoint 2007"
 
 # I think this has something to do with the dialog box for entering initials
 # only works for Word and Powerpoint, but I'm not sure. Excel doesn't start
