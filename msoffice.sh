@@ -42,11 +42,6 @@ cd "$POL_USER_ROOT/tmp"
 # Making bulletslook right
 POL_Wine_InstallFonts
 
-check_one "unzip" "unzip"
-check_one "wget" "wget"
-check_one "foobar" "foobar"
-POL_SetupWindow_missing
-
 # Making e.g. smileys look right
 function copyExtraFonts() {
     FONTSURL=https://github.com/IamDH4/ttf-wps-fonts/archive/master.zip
