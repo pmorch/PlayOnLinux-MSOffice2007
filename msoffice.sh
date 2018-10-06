@@ -29,6 +29,9 @@ WINE_VERSION="3.11"
 
 POL_Debug_Init
 POL_SetupWindow_Init
+
+# This doesn't do anything in 4.2.12. See
+# https://www.playonlinux.com/en/topic-15931.html
 POL_SetupWindow_presentation "$TITLE" "Microsoft" "http://www.microsoft.com/" "$AUTHOR" "$PREFIXNAME"
 
 POL_System_SetArch "x86"
@@ -43,6 +46,8 @@ cd "$POL_USER_ROOT/tmp"
 POL_Wine_InstallFonts
 
 # Making e.g. smileys look right
+# Is this the right way to do it? See
+# https://www.playonlinux.com/en/topic-15929.html
 function copyExtraFonts() {
     FONTSURL=https://github.com/IamDH4/ttf-wps-fonts/archive/master.zip
     FONTSZIP=ttf-wps-fonts-master.zip
@@ -97,12 +102,15 @@ POL_Shortcut "WINWORD.EXE" "Microsoft Word 2007" "" "" "Office;WordProcessor;"
 POL_Shortcut "EXCEL.EXE" "Microsoft Excel 2007" "" "" "Office;Spreadsheet;"
 POL_Shortcut "POWERPNT.EXE" "Microsoft Powerpoint 2007" "" "" "Office;Presentation;"
 
-POL_Extension_Write doc "Microsoft Word 2007"
-POL_Extension_Write docx "Microsoft Word 2007"
-POL_Extension_Write xls "Microsoft Excel 2007"
-POL_Extension_Write xlsx "Microsoft Excel 2007"
-POL_Extension_Write ppt "Microsoft Powerpoint 2007"
-POL_Extension_Write pptx "Microsoft Powerpoint 2007"
+# These don't seem to do anything
+# https://www.playonlinux.com/en/topic-15928.html
+#
+# POL_Extension_Write doc "Microsoft Word 2007"
+# POL_Extension_Write docx "Microsoft Word 2007"
+# POL_Extension_Write xls "Microsoft Excel 2007"
+# POL_Extension_Write xlsx "Microsoft Excel 2007"
+# POL_Extension_Write ppt "Microsoft Powerpoint 2007"
+# POL_Extension_Write pptx "Microsoft Powerpoint 2007"
 
 # I think this has something to do with the dialog box for entering initials
 # only works for Word and Powerpoint, but I'm not sure. Excel doesn't start
